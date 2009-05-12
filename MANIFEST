@@ -1,4 +1,3 @@
-.gitignore
 Changes
 inc/Module/AutoInstall.pm
 inc/Module/Install.pm
@@ -25,10 +24,15 @@ META.yml
 README
 t/00_compile.t
 t/01_each_formats.t
+t/02_only_main.t
 t/config/conf/main/main1.conf
 t/config/conf/main/main2.conf
 t/config/conf/sub/sub1.conf
 t/config/conf/sub/sub2.conf
+t/config/expected/complicated.yaml
+t/config/expected/complicated_main_only.yaml
+t/config/expected/simple.yaml
+t/config/expected/simple_main_only.yaml
 t/config/ini/main/main1.ini
 t/config/ini/main/main2.ini
 t/config/ini/sub/sub1.ini
