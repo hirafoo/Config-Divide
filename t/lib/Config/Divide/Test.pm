@@ -11,11 +11,10 @@ our @EXPORT = qw/
 
 sub load () {
     my $data = shift;
-    my $obj = Config::Divide->new(
-        config_path_main => $data->{config_path_main},
-        config_path_sub  => $data->{config_path_sub},
+
+    Config::Divide->load_config(
+        %$data
     );
-    $obj->load_config;
 }
 
 sub p () { warn Dumper shift }

@@ -13,10 +13,13 @@ license 'perl';
 
 requires $_ 
     for qw/
-        Any::Moose
         Config::Any
         File::Spec
-        self
+    /;
+
+test_requires $_
+    for qw/
+        Test::Synopsis
         YAML::Syck
     /;
 
