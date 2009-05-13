@@ -4,8 +4,6 @@ use warnings;
 
 use Config::Any;
 use File::Spec;
-use Data::Dumper;
-sub p {warn Dumper shift}
 
 use 5.008_001;
 our $VERSION = '0.01';
@@ -100,13 +98,13 @@ you can set path(s) that main (and sub) config files. if you set sub config file
 
 =over 2
 
-=item @config_path
+=item @config_paths
 
-this is path to config files. you can set one or two path. 1st path is main, and 2nd path is sub. if main and sub contain same item, main config will be overwritten by sub config data.
+path to config files. you can set one or two path. 1st path is main, and 2nd path is sub. if main and sub contain same item, main config will be overwritten by sub config data.
 
 =item %config_any_options
 
-this is option of Config::Any->load_files. in Config::Divide, use option {use_ext => 1} only.
+option of Config::Any->load_files. in Config::Divide, use option {use_ext => 1} only.
 if you set value to %config_any_option, default value will be overwritten.
 
 =head1 AUTHOR
