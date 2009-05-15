@@ -14,11 +14,14 @@ license 'perl';
 requires $_ 
     for qw/
         Config::Any
+        Config::General
         File::Spec
+        YAML
     /;
 
 test_requires $_
     for qw/
+        Test::Exception
         Test::Synopsis
         YAML::Syck
     /;

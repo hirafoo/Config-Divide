@@ -23,9 +23,12 @@ MANIFEST			This list of files
 META.yml
 README
 t/00_compile.t
-t/01_each_formats.t
-t/02_only_main.t
-t/99_synopsis.t
+t/1_each_formats_1.t
+t/1_each_formats_2.t
+t/2_only_main_1.t
+t/2_only_main_2.t
+t/9_error.t
+t/9_synopsis.t
 t/config/conf/main/main1.conf
 t/config/conf/main/main2.conf
 t/config/conf/sub/sub1.conf
