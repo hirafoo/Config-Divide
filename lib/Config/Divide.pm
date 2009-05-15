@@ -2,11 +2,12 @@ package Config::Divide;
 use strict;
 use warnings;
 
+use Carp;
 use Config::Any;
 use File::Spec;
 
 use 5.008_001;
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 sub get_config_files {
     my ($class, $config_path) = @_;
@@ -27,9 +28,20 @@ sub get_config_files {
 }
 
 sub load_config {
-    my ($class, %opt) = @_;
+    my $class = shift;
+    my %opt;
 
-    my @config_files;
+    if (ref $_[0] eq 'ARRAY') {
+        %opt = (config_paths => $_[0], config_any_options => $_[1]);
+    }
+    elsif (ref $_[0] eq 'HASH') {
+        %opt = %{ $_[0] };
+    }
+    else {
+        croak 'call me ( [path(s)], { options of Config::Any->load_files() }) or ( {config_paths => [path(s)]} )';
+    }
+
+    my (@config_files, @config_paths);
     push @config_files, $class->get_config_files($_)
         for @{$opt{config_paths}};
 
@@ -68,7 +80,7 @@ __END__
 
 =head1 NAME
 
-Config::Divide - config loader like Catalyst::Plugin::ConfigLoader.
+Config::Divide - config loader like Catalyst::Plugin::ConfigLoader
 
 =head1 SYNOPSIS
 
@@ -80,27 +92,38 @@ Config::Divide - config loader like Catalyst::Plugin::ConfigLoader.
       # for example...
       # filter => \&filter,
   );
-  
-  my $config = Config::Divide->load_config(
+
+  my $config;
+
+  $config = Config::Divide->load_config(
       config_paths       => \@config_paths,
       config_any_options => \%config_any_options,
+  );
+
+  # or 
+
+  $config = Config::Divide->load_config(
+      [
+          \@config_paths,
+          \%config_any_options,
+      ],
   );
 
 =head1 DESCRIPTION
 
 Config::Divide is config loader like Catalyst::Plugin::ConfigLoader.
 
-you can set path(s) that main (and sub) config files. if you set sub config files's path, and there is same item in main config and sub config, then main item will be overwritten by sub config data.
+you can set path(s) that main (and sub) config files. if you set sub config files' path, and there is same item in main config and sub config, then main item will be overwritten by sub config data.
 
 =head1 METHODS
 
-=head2 load_config(\@config_paths, [\%config_any_options])
+=head2 load_config
 
 =over 2
 
 =item @config_paths
 
-path to config files. you can set one or two path. 1st path is main, and 2nd path is sub. if main and sub contain same item, main config will be overwritten by sub config data.
+path to config files. you can set one (and more) path(s). priority of 1st path is lowest, and 2nd path's is secondly low. if there are same items, low priority data will be overwritten by higher priority config data.
 
 =item %config_any_options
 
