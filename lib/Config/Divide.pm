@@ -38,7 +38,7 @@ sub load_config {
         %opt = %{ $_[0] };
     }
     else {
-        croak 'call me ( [path(s)], { options of Config::Any->load_files() }) or ( {config_paths => [path(s)]} )';
+        croak 'invalid args';
     }
 
     my (@config_files, @config_paths);
@@ -113,7 +113,7 @@ Config::Divide - config loader like Catalyst::Plugin::ConfigLoader
 
 Config::Divide is config loader like Catalyst::Plugin::ConfigLoader.
 
-you can set path(s) that main (and sub) config files. if you set sub config files' path, and there is same item in main config and sub config, then main item will be overwritten by sub config data.
+you can set path(s) that main (and sub) config files. if you set sub config files' path, and there are same items in main config and sub config, then main item will be overwritten by sub config data.
 
 =head1 METHODS
 
