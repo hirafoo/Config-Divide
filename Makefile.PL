@@ -16,6 +16,7 @@ requires $_
         Config::Any
         Config::General
         File::Spec
+        XML::Simple
         YAML
     /;
 
