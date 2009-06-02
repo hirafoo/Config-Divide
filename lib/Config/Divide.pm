@@ -6,8 +6,7 @@ use Carp;
 use Config::Any;
 use File::Spec;
 
-use 5.008_001;
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 sub get_config_files {
     my ($class, $config_path) = @_;

@@ -1,4 +1,10 @@
 Revision history for Perl extension Config::Divide
 
+0.03  Tue Jun  2 13:31:41 JST 2009
+        - solves dependences
+
+0.02  17 May 2009
+        - fix method interface 
+
 0.01  Tue May 12 11:17:49 2009
         - original version
