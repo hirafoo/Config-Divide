@@ -6,7 +6,7 @@ use Carp;
 use Config::Any;
 use File::Spec;
 
-our $VERSION = '0.03';
+our $VERSION = '0.031';
 
 sub get_config_files {
     my ($class, $config_path) = @_;
@@ -52,7 +52,7 @@ sub load_config {
         if $opt{config_any_options};
 
     my $config = Config::Any->load_files(
-        {   
+        {
             files => \@config_files,
             %config_any_options,
         }
@@ -95,17 +95,17 @@ Config::Divide - config loader like Catalyst::Plugin::ConfigLoader
   my $config;
 
   $config = Config::Divide->load_config(
-      config_paths       => \@config_paths,
-      config_any_options => \%config_any_options,
+      {
+          config_paths       => \@config_paths,
+          config_any_options => \%config_any_options,
+      }
   );
 
-  # or 
+  # or
 
   $config = Config::Divide->load_config(
-      [
-          \@config_paths,
-          \%config_any_options,
-      ],
+      \@config_paths,
+      \%config_any_options,
   );
 
 =head1 DESCRIPTION
