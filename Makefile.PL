@@ -11,21 +11,21 @@ auto_include_deps;
 
 license 'perl';
 
-requires $_ 
+requires $_
     for qw/
         Config::Any
         Config::General
         Config::Tiny
         File::Spec
         XML::Simple
-        YAML
+        YAML::XS
     /;
 
 test_requires $_
     for qw/
         Test::Exception
         Test::Synopsis
-        YAML::Syck
+        YAML::XS
     /;
 
 auto_install;
