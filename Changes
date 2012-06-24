@@ -1,5 +1,8 @@
 Revision history for Perl extension Config::Divide
 
+0.032 Sun Jun 24 14:42:09 JST 2012
+        - use YAML::XS instead of YAML::Syck
+
 0.031 Wed Mar  9 18:33:01 JST 2011
         - pod fix (thanks to wols)
 
