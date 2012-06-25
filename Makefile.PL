@@ -4,7 +4,7 @@ use inc::Module::Install;
 name 'Config-Divide';
 all_from 'lib/Config/Divide.pm';
 
-repository 'http://github.com/hirafoo/Config-Divide/tree/master';
+repository 'https://github.com/hirafoo/Config-Divide.git';
 
 use_test_base;
 auto_include_deps;
@@ -14,18 +14,15 @@ license 'perl';
 requires $_
     for qw/
         Config::Any
-        Config::General
-        Config::Tiny
         File::Spec
-        XML::Simple
-        YAML::XS
     /;
 
 test_requires $_
     for qw/
         Test::Exception
         Test::Synopsis
-        YAML::XS
+        YAML
+        YAML::Syck
     /;
 
 auto_install;

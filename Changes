@@ -1,5 +1,8 @@
 Revision history for Perl extension Config::Divide
 
+0.033 Mon Jun 25 20:33:55 JST 2012
+        - try to fix deps
+
 0.032 Sun Jun 24 14:42:09 JST 2012
         - use YAML::XS instead of YAML::Syck
 

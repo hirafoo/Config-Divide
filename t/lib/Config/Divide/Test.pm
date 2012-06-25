@@ -2,7 +2,7 @@ package Config::Divide::Test;
 use Test::Base -Base;
 use Test::Exception;
 use Data::Dumper;
-use YAML::XS ();
+use YAML::Syck ();
 
 our @EXPORT = qw/
     load
@@ -19,7 +19,7 @@ sub p () { warn Dumper shift }
 
 sub testdata () {
     my $type = shift->{data_type};
-    YAML::XS::LoadFile( "./t/config/expected/$type.yaml" );
+    YAML::Syck::LoadFile( "./t/config/expected/$type.yaml" );
 }
 
 1;
