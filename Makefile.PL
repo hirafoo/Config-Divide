@@ -1,13 +1,8 @@
 use strict;
 use inc::Module::Install;
-
 name 'Config-Divide';
 all_from 'lib/Config/Divide.pm';
-
 repository 'https://github.com/hirafoo/Config-Divide.git';
-
-use_test_base;
-auto_include_deps;
 
 license 'perl';
 
@@ -21,9 +16,8 @@ test_requires $_
     for qw/
         Test::Exception
         Test::Synopsis
-        YAML
-        YAML::Syck
     /;
+test_requires 'Test::More' => 0.98;
 
 auto_install;
 
