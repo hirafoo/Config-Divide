@@ -9,6 +9,7 @@ license 'perl';
 requires $_
     for qw/
         Config::Any
+        Config::General
         File::Spec
     /;
 

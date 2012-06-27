@@ -36,10 +36,11 @@
       "runtime" : {
          "requires" : {
             "Config::Any" : 0,
+            "Config::General" : 0,
             "File::Spec" : 0
          }
       }
    },
    "release_status" : "stable",
-   "version" : "0.034"
+   "version" : "0.035"
 }

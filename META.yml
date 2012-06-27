@@ -22,8 +22,9 @@ no_index:
     - t
 requires:
   Config::Any: 0
+  Config::General: 0
   File::Spec: 0
 resources:
   license: http://dev.perl.org/licenses/
   repository: https://github.com/hirafoo/Config-Divide.git
-version: 0.034
+version: 0.035
