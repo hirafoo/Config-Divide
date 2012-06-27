@@ -6,19 +6,22 @@ repository 'https://github.com/hirafoo/Config-Divide.git';
 
 license 'perl';
 
-requires $_
-    for qw/
-        Config::Any
-        Config::General
-        File::Spec
-    /;
+requires $_ for qw/
+    Config::Any
+    File::Spec
+/;
 
-test_requires $_
-    for qw/
-        Test::Exception
-        Test::Synopsis
-    /;
+test_requires $_ for qw/
+    Config::General
+    Config::Tiny
+    Test::Exception
+    Test::Synopsis
+    XML::Simple
+    XML::NamespaceSupport
+    YAML
+/;
 test_requires 'Test::More' => 0.98;
+test_requires 'YAML::Syck' => 0.70;
 
 auto_install;
 

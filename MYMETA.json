@@ -22,10 +22,16 @@
    "prereqs" : {
       "build" : {
          "requires" : {
+            "Config::General" : 0,
+            "Config::Tiny" : 0,
             "ExtUtils::MakeMaker" : "6.42",
             "Test::Exception" : 0,
             "Test::More" : "0.98",
-            "Test::Synopsis" : 0
+            "Test::Synopsis" : 0,
+            "XML::NamespaceSupport" : 0,
+            "XML::Simple" : 0,
+            "YAML" : 0,
+            "YAML::Syck" : "0.7"
          }
       },
       "configure" : {
@@ -36,11 +42,10 @@
       "runtime" : {
          "requires" : {
             "Config::Any" : 0,
-            "Config::General" : 0,
             "File::Spec" : 0
          }
       }
    },
    "release_status" : "stable",
-   "version" : "0.035"
+   "version" : "0.036"
 }

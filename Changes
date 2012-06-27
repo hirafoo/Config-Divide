@@ -1,5 +1,8 @@
 Revision history for Perl extension Config::Divide
 
+0.036 Wed Jun 27 17:31:42 JST 2012
+        - try to fix deps for test
+
 0.035 Wed Jun 27 02:38:22 JST 2012
         - try to fix deps
 
